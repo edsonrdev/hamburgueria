@@ -4,7 +4,6 @@ import { Container } from "./style";
 
 import { CartProductsContext } from "../../providers/cartProducts";
 
-import { Button } from "../Button";
 import { CartItem } from "../CartItem";
 
 export const Cart = () => {
@@ -16,7 +15,9 @@ export const Cart = () => {
 
   return (
     <Container>
-      <header>Carrinho de compras</header>
+      <header>
+        <h1>Carrinho de compras</h1>
+      </header>
 
       {!cartProducts.length ? (
         <div>
@@ -34,14 +35,10 @@ export const Cart = () => {
 
           <footer>
             <div>
-              <span>Total:</span>
-              <span>R$ {cartTotal.toFixed(2)}</span>
+              <span className="total-label">Total:</span>
+              <span className="total-value">R$ {cartTotal.toFixed(2)}</span>
             </div>
-            <Button
-              text="Remover todos"
-              color="#27AE60"
-              onClick={() => setCartProducts([])}
-            />
+            <button onClick={() => setCartProducts([])}>Remover todos</button>
           </footer>
         </>
       )}

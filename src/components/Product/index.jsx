@@ -1,4 +1,3 @@
-import { Button } from "../Button";
 import { Container } from "./style";
 
 import { useContext } from "react";
@@ -35,8 +34,8 @@ export const Product = ({ product }) => {
       <section>
         <h2>{product.name}</h2>
         <h3>{product.category}</h3>
-        <span>{product.price}</span>
-        <Button text="Adicionar" onClick={() => handleAddToCart(product)} />
+        <span>R$ {product.price.toFixed(2)}</span>
+        <button onClick={() => handleAddToCart(product)}>Adicionar</button>
       </section>
     </Container>
   );

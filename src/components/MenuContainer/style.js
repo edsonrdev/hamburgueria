@@ -8,5 +8,5 @@ export const Container = styled.ul`
   align-items: flex-start;
   justify-content: flex-start;
   gap: 10px;
-  background-color: pink;
+  /* background-color: pink; */
 `;

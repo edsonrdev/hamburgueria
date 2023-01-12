@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.li`
   display: flex;
-  padding: 10px;
+  padding: 0;
+  padding-right: 0;
   border-bottom: 1px solid #ddd;
 
   header {
@@ -19,8 +20,7 @@ export const Container = styled.li`
   section {
     flex: 1;
     position: relative;
-    padding: 0 10px;
-    /* background-color: lime; */
+    padding-left: 10px;
   }
 
   h2 {
@@ -29,8 +29,7 @@ export const Container = styled.li`
     font-weight: 700;
     font-size: 14px;
     line-height: 0.1;
-    /* background: red; */
-    color: #333;
+    color: var(--grey-100);
   }
 
   h3,
@@ -54,7 +53,7 @@ export const Container = styled.li`
 
   div {
     position: absolute;
-    right: 10px;
+    right: 0;
     bottom: 0;
 
     height: 22px;

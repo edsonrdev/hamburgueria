@@ -7,6 +7,25 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    :root {
+        /* branding colors */
+        --color-primary: #27AE60;
+        --color-primary-50: #93D7AF;
+        --color-secondary: #EB5757;
+
+        /* grey scale colors */
+        --gray-100: #333333;
+        --gray-50: #828282;
+        --gray-20: #E0E0E0;
+        --gray-0: #F5F5F5;
+
+        /* feedback colors */
+        --negative: #E60000;
+        --warning: #FFCD07;
+        --success: #168821;
+        --information: #155BCB;
+    }
+
     body {
         min-height: 100vh;
         font-family: 'Inter', sans-serif;
@@ -19,15 +38,19 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0 16px;
     }
 
-    main .container > div {
+    button, input {
+        font-family: 'Inter', sans-serif;
+    }
+
+    main > div {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         gap: 14px;
-        background: red;
+        /* background: lightpink; */
     }
 
-    main .search-results {
+    main h2.search-message {
         margin-bottom: 20px;
     }
 `;

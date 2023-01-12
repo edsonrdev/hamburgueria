@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import React from "react";
 
 import { Cart } from "./components/Cart";
 import { Header } from "./components/Header";
@@ -10,40 +11,32 @@ export const App = () => {
   const { products } = useContext(ProductsContext);
   const { search } = useContext(SearchContext);
 
-  let filteredProducts = [];
+  const filteredProducts = products.filter(
+    (product) =>
+      product.name.toLowerCase().includes(search.toLowerCase()) ||
+      product.category.toLowerCase().includes(search.toLowerCase())
+  );
 
-  if (search) {
-    filteredProducts = products.filter(
-      (product) =>
-        product.name.toLowerCase().includes(search.toLowerCase()) ||
-        product.category.toLowerCase().includes(search.toLowerCase())
-    );
+  let searchMessage = "";
+
+  if (search && filteredProducts.length) {
+    searchMessage = `Resultados para: ${search}`;
+  } else if (search && !filteredProducts.length) {
+    searchMessage = "Produto não encontrado!";
   }
 
   return (
     <div className="App">
       <Header />
 
-      <main>
-        <div className="container">
-          <h2 className="search-results">
-            {search
-              ? filteredProducts.length
-                ? `Resultados para: ${search}`
-                : `Sem resultados para: ${search}`
-              : ""}
-          </h2>
+      <main className="container">
+        <h2 className="search-message">{searchMessage}</h2>
 
-          <div>
-            {!search ? (
-              <MenuContainer products={products} />
-            ) : (
-              filteredProducts.length && (
-                <MenuContainer products={filteredProducts} />
-              )
-            )}
-            <Cart />
-          </div>
+        <div>
+          <MenuContainer
+            products={filteredProducts.length ? filteredProducts : products}
+          />
+          <Cart />
         </div>
       </main>
     </div>

@@ -1,6 +1,5 @@
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 
-import { Button } from "../Button";
 import { Container } from "./style";
 
 import { SearchContext } from "../../providers/search";
@@ -8,14 +7,14 @@ import { SearchContext } from "../../providers/search";
 export const Header = () => {
   const { search, setSearch } = useContext(SearchContext);
 
-  useEffect(() => {
-    console.log(search);
-  }, [search]);
+  // useEffect(() => {
+  //   console.log(search);
+  // }, [search]);
 
   return (
     <Container>
       <div className="container">
-        <h1>Hamburgueria</h1>
+        <h1>DevBurguer</h1>
 
         <form>
           <input
