@@ -48,6 +48,10 @@ export const GlobalStyle = createGlobalStyle`
         align-items: flex-start;
         gap: 14px;
         /* background: lightpink; */
+
+        @media (max-width: 640px) {
+            flex-direction: column;
+        }
     }
 
     main h2.search-message {

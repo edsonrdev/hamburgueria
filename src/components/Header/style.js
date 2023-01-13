@@ -28,13 +28,17 @@ export const Container = styled.header`
     padding: 10px;
 
     background: #ffffff;
-    /* grey-100 */
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
 
     border: 2px solid var(--gray-20);
     border-radius: 8px;
+
+    :focus {
+      border-color: transparent;
+      outline: 2px solid var(--color-primary);
+    }
 
     ::placeholder {
       font-family: "Inter", sans-serif;

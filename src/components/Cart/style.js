@@ -6,6 +6,11 @@ export const Container = styled.div`
   border-radius: 5px;
   overflow: hidden;
 
+  @media (max-width: 640px) {
+    order: -1;
+    flex: 1 0 auto !important;
+  }
+
   > header {
     color: #fff;
     background: var(--color-primary);
